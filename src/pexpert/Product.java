@@ -1,7 +1,8 @@
 package pexpert;
 
+import Exceptions.IllegalPriceValue;
 
-public class Product {
+public class Product implements Comparable<Object>{
 	private String name;
 	private Price price;
 	
@@ -18,7 +19,7 @@ public class Product {
 		return price.calculatePrice(amount);
 	}
 	
-	public void updateProductPrice(double newPrice) {
+	public void updateProductPrice(double newPrice) throws IllegalPriceValue {
 		price.updatePrice(newPrice);
 	}
 	
@@ -29,5 +30,15 @@ public class Product {
 	@Override
 	public String toString() {
 		return name;
+	}
+
+	@Override
+	public int compareTo(Object anotherProduct) throws ClassCastException {
+		if(!(anotherProduct instanceof Product)) {
+			throw new ClassCastException("Expected a product object");
+		}
+		
+		Product otherP = (Product) anotherProduct;
+		return name.compareTo(otherP.getName()) +  price.compareTo(otherP.price);
 	}
 }

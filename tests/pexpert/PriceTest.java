@@ -12,7 +12,7 @@ class PriceTest {
 	Price price;
 
 	@BeforeEach
-	void SetUp() {
+	void SetUp()  throws Exception {
 		price = new Price(2.6);
 	}
 
