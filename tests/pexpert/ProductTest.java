@@ -30,7 +30,6 @@ class ProductTest {
 	void verifyProductCreation() {
 		//Verify that it is possible to create a product and
 		//that is created with the correct values
-		assertNotNull(product, "Product should not be empty");
 		assertEquals(product.getName(), "Banana", "Expected a product called banana");
 		assertNotNull(product.getPrice(), "Product price should not be null");
 		assertEquals(product.getPrice().toString(), "1.5", "Expected a price of 1.5");	
