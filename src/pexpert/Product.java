@@ -15,21 +15,16 @@ public class Product implements Comparable<Object>{
 		return this.name;
 	}
 	
+	public final Price getPrice() {
+		return price;
+	}
+	
 	public double calculatePrice(double amount) {
 		return price.calculatePrice(amount);
 	}
 	
 	public void updateProductPrice(double newPrice) throws IllegalPriceValue {
 		price.updatePrice(newPrice);
-	}
-	
-	public String displayPrice() {
-		return price.toString();
-	}
-	
-	@Override
-	public String toString() {
-		return name;
 	}
 
 	@Override

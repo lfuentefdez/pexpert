@@ -55,4 +55,8 @@ public class Basket {
 	public String toString() {
 		return items.stream().map(Object::toString).collect(Collectors.joining("\n"));
 	}
+	
+	public double calculateTotal() {
+		return items.stream().mapToDouble(item -> item.calculatePrice()).sum();
+	}
 }
